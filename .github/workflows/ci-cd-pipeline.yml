@@ -23,7 +23,7 @@ jobs:
       uses: docker/build-push-action@v4
       with:
         push: true
-        tags: mydockerhubuser/myapp:latest
+        tags: devilocheek/myapp:latest
 
     - name: Configure kubectl
       uses: azure/setup-kubectl@v3
