@@ -30,5 +30,10 @@ jobs:
           mkdir -p $HOME/.kube
           echo "${{ secrets.KUBECONFIG_FILE }}" | base64 -d > $HOME/.kube/config
 
+      - name: Verify Kubernetes context
+        run: |
+          kubectl config view
+          kubectl config current-context
+
       - name: Deploy to Kubernetes
         run: kubectl apply -f k8s/
